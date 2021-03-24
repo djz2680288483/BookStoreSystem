@@ -1,0 +1,36 @@
+#视图解析器
+spring:
+  thymeleaf:
+    enabled: false
+    cache: false
+  mvc:
+    view:
+      prefix:  /WEB-INF/jsp/
+      suffix: .jsp
+
+#数据库连接
+  datasource:
+    url: jdbc:mysql://localhost:3306/trip?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      max-wait: 60000
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+
+
+
+
+
+mybatis-plus:
+  mapper-locations: classpath:/com.wyh/mapper/*Mapper.xml
+  type-aliases-package: com.wyh.pojo
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 1121
+  servlet:
+    context-path: /
